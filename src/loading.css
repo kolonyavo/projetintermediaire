@@ -1,0 +1,106 @@
+body
+{
+  margin:0;
+  padding:0;
+  background:#262626;
+  text-align: center;
+}
+.ring
+{
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:40px;
+  height:40px;
+  background:transparent;
+  border:3px solid #3c3c3c;
+  border-radius:50%;
+  text-align:start;
+  line-height:150px;
+  font-family:sans-serif;
+  font-size:15px;
+  color:rgb(51, 228, 204);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px rgb(51, 228, 204);
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+.ring:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid rgb(51, 228, 204);
+  border-right:3px solid rgb(51, 228, 204);
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+
+.loading span {
+  display: inline-block;
+  vertical-align: middle;
+  width: .6em;
+  height: .6em;
+  margin: .19em;
+  background: #007DB6;
+  border-radius: .6em;
+  animation: loading 1s infinite alternate;
+}
+
+/*
+ * Dots Colors
+ * Smarter targeting vs nth-of-type?
+ */
+.loading span:nth-of-type(2) {
+  background: #008FB2;
+  animation-delay: 0.2s;
+}
+.loading span:nth-of-type(3) {
+  background: #2734e6;
+  animation-delay: 0.4s;
+}
+.loading span:nth-of-type(4) {
+  background: #3311ca;
+  animation-delay: 0.6s;
+}
+.loading span:nth-of-type(5) {
+  background: #621191;
+  animation-delay: 0.8s;
+}
+.loading span:nth-of-type(6) {
+  background: #8a18ad;
+  animation-delay: 1.0s;
+}
+.loading span:nth-of-type(7) {
+  background: #b944e7;
+  animation-delay: 1.2s;
+}
+
+/*
+ * Animation keyframes
+ * Use transition opacity instead of keyframes?
+ */
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
